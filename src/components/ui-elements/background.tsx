@@ -1,4 +1,4 @@
-import bg from "../../../public/img/background.png";
+import bg from "../../../public/img/ui-elements/background.png";
 import Image from "next/image";
 const Background = () => {
   return (
