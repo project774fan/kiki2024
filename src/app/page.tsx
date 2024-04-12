@@ -1,15 +1,14 @@
-import TitleBar from "@/components/ui-elements/titlebar";
+import Menu from "@/components/ui-elements/menu";
 import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
+import Background from "@/components/ui-elements/background";
 
 export default function Home() {
   return (
     <div>
-      <TitleBar />
-      <div>
-        <Link href="/message">ボタン</Link>
-      </div>
+      <Background />
+      <Menu />
     </div>
   );
 }
