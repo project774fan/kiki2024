@@ -1,6 +1,6 @@
 import IllustParts from "../../components/parts/illust";
 
-const Msg = () => {
+const Illust = () => {
   return (
     <div>
       <div className="flex h-full items-start justify-center ">
@@ -12,4 +12,4 @@ const Msg = () => {
   );
 };
 
-export default Msg;
+export default Illust;
