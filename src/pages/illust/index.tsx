@@ -3,8 +3,14 @@ import IllustParts from "../../components/parts/illust";
 const Illust = () => {
   return (
     <div>
-      <div className="flex h-full items-start justify-center ">
-        <div className="grid grid-cols-2 gap-1  p-1 sm:grid-cols-3 sm:gap-2 sm:p-2 lg:grid-cols-4  lg:gap-4 lg:p-4 2xl:grid-cols-4 2xl:gap-6 2xl:p-6">
+      <div className=" flex h-full items-start justify-center">
+        <img
+          src="img/ui-elements/illust_background.png"
+          alt="イラスト背景"
+          className=" fixed h-full w-full scale-150"
+        />
+
+        <div className="grid w-3/4 grid-cols-5 gap-20  p-6 ">
           <IllustParts />
         </div>
       </div>

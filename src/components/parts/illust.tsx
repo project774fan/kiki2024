@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
 import illustlist from "../array/illustlist";
-import hokuro from "../../img/parts/ほくろ3.png";
+import loadingImg from "../../img/loading.png";
+
+interface Url {
+  name: string;
+  img: string;
+}
 
 const IllustParts = () => {
   const imglist = illustlist();
@@ -16,7 +21,7 @@ const IllustParts = () => {
   }
 
   const openModal = (index: number) => {
-    setSelectedImage(imglist[index]);
+    setSelectedImage(imglist[index].img);
     setScroll("hidden");
   };
 
@@ -35,53 +40,63 @@ const IllustParts = () => {
   });
 
   //ページを開いたらダウンロード
-  // const download = async () => {
-  //   const imageUrls = msglist();
+  const download = async () => {
+    const imageUrls = illustlist();
 
-  //   try {
-  //     await Promise.all(
-  //       imageUrls.map((url) => {
-  //         return new Promise((resolve) => {
-  //           const IllustBox = new Image();
-  //           IllustBox.src = url;
-  //           IllustBox.onload = () => {
-  //             resolve(null);
-  //           };
-  //         });
-  //       }),
-  //     );
-  //   } finally {
-  //     // ロード完了後、ローディング状態を終了
-  //     setLoading(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   download();
-  // }, []);
+    try {
+      await Promise.all(
+        imageUrls.map((url: Url) => {
+          return new Promise((resolve) => {
+            const IllustBox = new window.Image();
+            IllustBox.src = url.img;
+            IllustBox.onload = () => {
+              resolve(null);
+            };
+          });
+        })
+      );
+    } finally {
+      // ロード完了後、ローディング状態を終了
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    download();
+  }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
-  //       <div className="h-10 w-10 animate-spin rounded-full border-4 border-nemoBlue border-t-transparent"></div>
-  //       {/* <img
-  //         src={loadingImg}
-  //         alt=""
-  //         className="h-10 w-10 animate-spin object-contain"
-  //       /> */}
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
+        <Image src={loadingImg} alt="" className="h-10 w-10 animate-spin object-contain" />
+      </div>
+    );
+  }
 
   return (
     <>
       {imglist.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt="メッセージ"
-          className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
-          onClick={() => openModal(index)}
-        />
+        <>
+          <div className="-skew-x-12 overflow-hidden rounded-md border-2  border-white  shadow transition-transform duration-300 hover:scale-105">
+            <div>
+              <img
+                key={index}
+                src="img/ui-elements/illust_icon.png"
+                alt="背景"
+                className=" absolute h-full w-full opacity-50"
+              />
+              <img
+                key={index}
+                src={image.img}
+                alt="メッセージ"
+                className="skew-x-12 transform cursor-pointer object-cover "
+                onClick={() => openModal(index)}
+              />
+            </div>
+            <p className=" relative w-full skew-x-12 scale-105 bg-gray-500 text-center text-2xl  font-bold text-purple-400">
+              {image.name}
+            </p>
+          </div>
+        </>
       ))}
 
       {selectedImage && (

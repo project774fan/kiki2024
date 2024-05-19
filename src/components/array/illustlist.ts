@@ -1,5 +1,46 @@
 function illustlist() {
-  const illustImage = ["img/illust/12指腸_イラスト.png"];
+  const illustImage = [
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+    {
+      name: "マグロ",
+      img: "img/illust/マグロ_イラスト.png",
+    },
+  ];
   return illustImage;
 }
 export default illustlist;
