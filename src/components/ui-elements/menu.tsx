@@ -14,7 +14,7 @@ const Menu = () => {
         <Link href="/message" className={linkStyle}>
           <Image src={msgBtn} alt="メッセージ" />
         </Link>
-        <Link href="/illust" className={linkStyle}>
+        <Link href="/gacha" className={linkStyle}>
           <Image src={illustBtn} alt="メッセージ" />
         </Link>
         <Link href="/message" className={linkStyle}>
