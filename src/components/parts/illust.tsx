@@ -109,7 +109,7 @@ const IllustParts = () => {
             <animated.img
               src={selectedImage}
               alt="Selected Image"
-              className=" absolute object-contain px-4 sm:h-3/4 "
+              className=" absolute bg-white object-contain px-4 sm:h-3/4"
               style={scaleAnimation}
             />
           </animated.div>

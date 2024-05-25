@@ -73,40 +73,87 @@ const MsgParts = () => {
   // }
 
   return (
-    <div className="flex h-full items-start justify-center ">
-      <div className="p-1 sm:p-2 lg:p-4 2xl:p-6">
-        <>
-          {imglist.map((list, index) => (
-            // <img
-            //   key={index}
-            //   src={image.img}
-            //   alt="メッセージ"
-            //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
-            //   onClick={() => openModal(index)}
-            // />
-            <p key={index} onClick={() => openModal(index)}>
-              {list.name}
-            </p>
-          ))}
-        </>
-      </div>
-      {selectedImage && (
-        <div>
-          <animated.div
-            style={backgroundAnimation}
-            className="fixed left-0 top-0 flex h-full w-full items-center justify-center "
-            onClick={closeModal}
-          >
-            <animated.img
-              src={selectedImage}
-              alt="Selected Image"
-              className=" absolute object-contain px-4 sm:h-3/4 "
-              style={scaleAnimation}
-            />
-          </animated.div>
+    <div className="flex h-full w-full pt-16">
+      <div className=" h-full w-24  bg-slate-600" />
+      {/* トーク */}
+      <div className="flex h-full w-full">
+        {/* トークリスト */}
+        <div className="h-full w-1/2 overflow-y-auto">
+          <div className="h-full w-full border ">
+            <>
+              {imglist.map((list, index) => (
+                // <img
+                //   key={index}
+                //   src={image.img}
+                //   alt="メッセージ"
+                //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
+                //   onClick={() => openModal(index)}
+                // />
+                <p key={index} onClick={() => openModal(index)} className="border p-4 text-2xl">
+                  {list.name}
+                </p>
+              ))}
+            </>
+          </div>
         </div>
-      )}
+        {/* トーク画面 */}
+        <div className=" h-full w-1/2">
+          <div className="h-full ">
+            {selectedImage && (
+              <div className=" h-full  w-full ">
+                <animated.div
+                  // style={backgroundAnimation}
+                  className="  flex h-full  w-full  items-center justify-center "
+                  onClick={closeModal}
+                >
+                  <animated.img
+                    src={selectedImage}
+                    alt="Selected Image"
+                    className=" fixed  object-contain "
+                    style={scaleAnimation}
+                  />
+                </animated.div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
+
+    // <div className="flex h-full items-start justify-center ">
+    //   <div className="p-1 sm:p-2 lg:p-4 2xl:p-6">
+    // <>
+    //   {imglist.map((list, index) => (
+    //     // <img
+    //     //   key={index}
+    //     //   src={image.img}
+    //     //   alt="メッセージ"
+    //     //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
+    //     //   onClick={() => openModal(index)}
+    //     // />
+    //     <p key={index} onClick={() => openModal(index)}>
+    //       {list.name}
+    //     </p>
+    //   ))}
+    // </>
+    //   </div>
+    // {selectedImage && (
+    //   <div>
+    //     <animated.div
+    //       style={backgroundAnimation}
+    //       className="fixed left-0 top-0 flex h-full w-full items-center justify-center "
+    //       onClick={closeModal}
+    //     >
+    //       <animated.img
+    //         src={selectedImage}
+    //         alt="Selected Image"
+    //         className=" absolute object-contain px-4 sm:h-3/4 "
+    //         style={scaleAnimation}
+    //       />
+    //     </animated.div>
+    //   </div>
+    // )}
+    // </div>
   );
 };
 
