@@ -93,9 +93,12 @@ const EnqueteParts = () => {
                 onClick={() => openModal(index)}
               />
             </div> */}
-            <p className=" relative w-full skew-x-12 scale-105 bg-gray-500 pl-9 text-3xl font-bold leading-relaxed text-purple-400">
+            <button
+              onClick={() => openModal(index)}
+              className=" relative w-full skew-x-12 scale-105 bg-gray-500 pl-9 text-start text-3xl font-bold leading-relaxed text-purple-400"
+            >
               {data.enquete}
-            </p>
+            </button>
           </div>
         </>
       ))}

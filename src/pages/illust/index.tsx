@@ -5,7 +5,7 @@ const Illust = () => {
     <div>
       <div className=" flex h-full items-start justify-center">
         <img
-          src="img/ui-elements/illust_background.png"
+          src="img/ui-elements/illust_bg.png"
           alt="イラスト背景"
           className=" fixed h-full w-full scale-150"
         />

@@ -1,7 +1,7 @@
 function enqlist() {
   const enqImage = [
     {
-      enquete: "好きなのは？きのこの山 or たけのこの里",
+      enquete: "好きなのは？",
       img: "img/illust/マグロ_イラスト.png",
     },
     {
@@ -9,11 +9,11 @@ function enqlist() {
       img: "img/illust/マグロ_イラスト.png",
     },
     {
-      enquete: "キキ様は？かっこいい or かわいい",
+      enquete: "キキ様は？",
       img: "img/illust/マグロ_イラスト.png",
     },
     {
-      enquete: "キキ様は？ある or ない",
+      enquete: "キキ様は？",
       img: "img/illust/マグロ_イラスト.png",
     },
     {
@@ -25,7 +25,7 @@ function enqlist() {
       img: "img/illust/マグロ_イラスト.png",
     },
     {
-      enquete: "キキ様に似合うなら ポニテ or ツインテ",
+      enquete: "キキ様に似合うなら",
       img: "img/illust/マグロ_イラスト.png",
     },
   ];

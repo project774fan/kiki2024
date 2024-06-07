@@ -1,7 +1,7 @@
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";
 @import "~tailwindcss/utilities";
-
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap");
 .ReactModal__Overlay {
   opacity: 0;
 }
@@ -12,6 +12,12 @@
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
+}
+
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* :root {
