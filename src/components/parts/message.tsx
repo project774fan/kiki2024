@@ -89,7 +89,11 @@ const MsgParts = () => {
                 //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
                 //   onClick={() => openModal(index)}
                 // />
-                <p key={index} onClick={() => openModal(index)} className="border p-4 text-2xl">
+                <p
+                  key={index}
+                  onClick={() => openModal(index)}
+                  className="border p-4 text-2xl hover:bg-neutral-100"
+                >
                   {list.name}
                 </p>
               ))}
@@ -103,7 +107,7 @@ const MsgParts = () => {
               <div className=" h-full  w-full ">
                 <animated.div
                   // style={backgroundAnimation}
-                  className="  flex h-full  w-full  items-center justify-center "
+                  className=" flex h-full  w-full  items-center justify-center "
                   onClick={closeModal}
                 >
                   <animated.img

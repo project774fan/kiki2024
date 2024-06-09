@@ -41,37 +41,37 @@ const EnqueteParts = () => {
   });
 
   //ページを開いたらダウンロード
-  const download = async () => {
-    const imageUrls = illustlist();
+  // const download = async () => {
+  //   const imageUrls = illustlist();
 
-    try {
-      await Promise.all(
-        imageUrls.map((url: Url) => {
-          return new Promise((resolve) => {
-            const IllustBox = new window.Image();
-            IllustBox.src = url.img;
-            IllustBox.onload = () => {
-              resolve(null);
-            };
-          });
-        })
-      );
-    } finally {
-      // ロード完了後、ローディング状態を終了
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    download();
-  }, []);
+  //   try {
+  //     await Promise.all(
+  //       imageUrls.map((url: Url) => {
+  //         return new Promise((resolve) => {
+  //           const IllustBox = new window.Image();
+  //           IllustBox.src = url.img;
+  //           IllustBox.onload = () => {
+  //             resolve(null);
+  //           };
+  //         });
+  //       })
+  //     );
+  //   } finally {
+  //     // ロード完了後、ローディング状態を終了
+  //     setLoading(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   download();
+  // }, []);
 
-  if (loading) {
-    return (
-      <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
-        <Image src={loadingImg} alt="" className="h-10 w-10 animate-spin object-contain" />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
+  //       <Image src={loadingImg} alt="" className="h-10 w-10 animate-spin object-contain" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>

@@ -3,18 +3,18 @@ import LeftUi from "@/components/ui-elements/left";
 import RightUi from "@/components/ui-elements/right";
 import Link from "next/link";
 import Image from "next/image";
-import "./globals.css";
-import Background from "@/components/ui-elements/background";
-import Start from "@/pages/start";
 
-export default function Home() {
+import Background from "@/components/ui-elements/background";
+
+const Top = () => {
   return (
     <div className="h-screen w-screen">
-      {/* <Background />
+      <Background />
       <LeftUi />
       <RightUi />
-      <Menu /> */}
-      <Start />
+      <Menu />
     </div>
   );
-}
+};
+
+export default Top;

@@ -14,6 +14,27 @@
   opacity: 0;
 }
 
+.canvas-background {
+  background-image: url("/public//img/ui-elements/gacha/gacha_pen.png");
+  background-size: auto; /* Ensure the image covers the entire canvas */
+  background-position: center; /* Center the image */
+}
+
+.diagonal-stripes {
+  background: repeating-linear-gradient(
+    -30deg,
+    rgba(201, 165, 255, 0.3),
+    rgba(201, 165, 255, 0.3) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+.a4-page {
+  width: 210mm;
+  height: 297mm;
+}
+
 * {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;

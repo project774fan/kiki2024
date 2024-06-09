@@ -21,9 +21,9 @@ const KikiTalk = () => {
 const Text = () => {
   return (
     <div className="ml-6 flex h-full skew-x-12 items-center">
-      <div className="text-4xl italic">
-        <p className=" text-yellow-500">Lv.</p>
-        <p className="text-white">99</p>
+      <div className="  text-4xl">
+        <p className="-skew-x-12 text-yellow-500">Lv.</p>
+        <p className="-skew-x-12 text-white">99</p>
       </div>
 
       <div className=" ml-6 w-full ">

@@ -53,8 +53,22 @@ const Gacha = () => {
 
   return (
     <>
-      <div className=" absolute h-full w-full bg-blue-400"></div>
-      <div className="fixed bottom-8 left-1/2 top-6 w-1/3 -translate-x-1/2 transform border bg-white shadow-lg">
+      <img
+        src="img/ui-elements/illust_bg.png"
+        alt="背景"
+        className=" absolute h-full w-full object-cover"
+      ></img>
+      <div className=" fixed bottom-8 left-1/2 top-6  aspect-[210/297] -translate-x-1/2 transform border bg-white shadow-lg ">
+        <img
+          src="img/ui-elements/gacha/gacha_paper.png"
+          alt="台紙"
+          className=" absolute h-full w-full object-cover "
+        />
+        <img
+          src="img/ui-elements/gacha/gacha_pape.png"
+          alt="パペ"
+          className=" absolute object-contain p-40"
+        />
         <div
           role="button"
           tabIndex={0}
@@ -62,14 +76,15 @@ const Gacha = () => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          className="fixed bottom-6 left-1/2 h-1/3 w-11/12 -translate-x-1/2 transform border bg-white shadow"
+          className=" fixed bottom-20 left-1/2 h-1/3 w-4/5  -translate-x-1/2 transform border bg-white p-2 shadow"
         >
           <canvas
             id="canvas"
-            className="pointer-events-none absolute left-0 top-0 h-full w-full"
+            className="diagonal-stripes pointer-events-none left-0 top-0 h-full w-full"
             width="100%"
             height="100%"
           ></canvas>
+
           {lines.map((line, index) => (
             <svg key={index} className="pointer-events-none absolute left-0 top-0 h-full w-full">
               <polyline

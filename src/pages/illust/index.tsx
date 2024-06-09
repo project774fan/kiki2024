@@ -10,7 +10,7 @@ const Illust = () => {
           className=" fixed h-full w-full scale-150"
         />
 
-        <div className="grid w-3/4 grid-cols-5 gap-20  p-6 ">
+        <div className="grid grid-cols-3 gap-2 px-6 pt-4 sm:w-3/4 sm:grid-cols-5 sm:gap-20 sm:p-6 ">
           <IllustParts />
         </div>
       </div>

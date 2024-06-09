@@ -76,7 +76,7 @@ const IllustParts = () => {
     <>
       {imglist.map((image, index) => (
         <>
-          <div className="-skew-x-12 overflow-hidden rounded-md border-2  border-white  shadow transition-transform duration-300 hover:scale-105">
+          <div className=" -skew-x-12 overflow-hidden rounded-md border-2 border-white shadow transition-transform duration-300 hover:scale-105">
             <div className=" bg-white">
               <img
                 key={index}
@@ -87,12 +87,12 @@ const IllustParts = () => {
               <img
                 key={index}
                 src={image.icon}
-                alt="メッセージ"
+                alt="イラスト"
                 className="skew-x-12 scale-125 transform cursor-pointer object-cover "
                 onClick={() => openModal(index)}
               />
             </div>
-            <p className=" relative w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-90 text-center text-2xl  font-bold text-purple-200">
+            <p className=" relative w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-90 text-center text-xs font-bold text-purple-200 sm:text-2xl">
               {image.name}
             </p>
           </div>
