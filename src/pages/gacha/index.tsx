@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+
 interface Point {
   x: number;
   y: number;
@@ -14,34 +15,77 @@ const Gacha = () => {
 
   const router = useRouter();
 
+  // 補正値を定義
+  const xOffset = 10; // 必要に応じて調整
+  const yOffset = 10; // 必要に応じて調整
+
   useEffect(() => {
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-    const rect = canvas.getBoundingClientRect();
-    setCanvasPosition({ x: rect.left, y: rect.top });
+    const updateCanvasPosition = () => {
+      const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+      const rect = canvas.getBoundingClientRect();
+      setCanvasPosition({ x: rect.left + window.scrollX, y: rect.top + window.scrollY });
+    };
+
+    updateCanvasPosition();
+    window.addEventListener("resize", updateCanvasPosition);
+    window.addEventListener("scroll", updateCanvasPosition);
+
+    return () => {
+      window.removeEventListener("resize", updateCanvasPosition);
+      window.removeEventListener("scroll", updateCanvasPosition);
+    };
   }, []);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    startDrawing(e.clientX, e.clientY);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!drawing) return;
+    draw(e.clientX, e.clientY);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0];
+    startDrawing(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!drawing) return;
+    const touch = e.touches[0];
+    draw(touch.clientX, touch.clientY);
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (!drawing) return;
+    endDrawing();
+  };
+
+  const handleTouchEnd = () => {
+    if (!drawing) return;
+    endDrawing();
+  };
+
+  const startDrawing = (clientX: number, clientY: number) => {
     if (alertTimeout) {
       clearTimeout(alertTimeout);
       setAlertTimeout(null);
     }
 
     setDrawing(true);
-    const { clientX, clientY } = e;
-    setCurrentLine([{ x: clientX - canvasPosition.x, y: clientY - canvasPosition.y }]);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!drawing) return;
-    const { clientX, clientY } = e;
-    setCurrentLine((currentLine) => [
-      ...currentLine,
-      { x: clientX - canvasPosition.x, y: clientY - canvasPosition.y },
+    setCurrentLine([
+      { x: clientX - canvasPosition.x + xOffset, y: clientY - canvasPosition.y + yOffset },
     ]);
   };
 
-  const handleMouseUp = () => {
-    if (!drawing) return;
+  const draw = (clientX: number, clientY: number) => {
+    setCurrentLine((currentLine) => [
+      ...currentLine,
+      { x: clientX - canvasPosition.x + xOffset, y: clientY - canvasPosition.y + yOffset },
+    ]);
+  };
+
+  const endDrawing = () => {
     setDrawing(false);
     setLines((lines) => [...lines, currentLine]);
     setCurrentLine([]);
@@ -56,27 +100,31 @@ const Gacha = () => {
       <img
         src="img/ui-elements/illust_bg.png"
         alt="背景"
-        className=" absolute h-full w-full object-cover"
-      ></img>
-      <div className=" fixed bottom-8 left-1/2 top-6  aspect-[210/297] -translate-x-1/2 transform border bg-white shadow-lg ">
+        className="absolute h-full w-full object-cover"
+      />
+      <div className="fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 transform border bg-white shadow-lg sm:bottom-8  sm:w-auto">
         <img
           src="img/ui-elements/gacha/gacha_paper.png"
           alt="台紙"
-          className=" absolute h-full w-full object-cover "
+          className="absolute h-full w-full object-cover"
         />
         <img
           src="img/ui-elements/gacha/gacha_pape.png"
           alt="パペ"
-          className=" absolute object-contain p-40"
+          className="absolute object-contain p-16 sm:p-40"
         />
         <div
           role="button"
           tabIndex={0}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          className=" fixed bottom-20 left-1/2 h-1/3 w-4/5  -translate-x-1/2 transform border bg-white p-2 shadow"
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
+          className="fixed bottom-9 left-1/2 h-1/3 w-4/5 -translate-x-1/2 transform border bg-white p-2 shadow sm:bottom-20"
         >
           <canvas
             id="canvas"
