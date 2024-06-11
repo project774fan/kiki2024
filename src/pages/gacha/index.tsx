@@ -102,7 +102,7 @@ const Gacha = () => {
         alt="背景"
         className="absolute h-full w-full object-cover"
       />
-      <div className="fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 transform border bg-white shadow-lg sm:bottom-8  sm:w-auto">
+      <div className="transfor fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 bg-white shadow-lg sm:bottom-8  sm:w-auto">
         <img
           src="img/ui-elements/gacha/gacha_paper.png"
           alt="台紙"
@@ -137,7 +137,7 @@ const Gacha = () => {
             <svg key={index} className="pointer-events-none absolute left-0 top-0 h-full w-full">
               <polyline
                 fill="none"
-                stroke="#65BBE9"
+                stroke="#B867C1"
                 strokeWidth="3"
                 points={line.map((point) => `${point.x},${point.y}`).join(" ")}
               />
@@ -147,7 +147,7 @@ const Gacha = () => {
             <svg className="pointer-events-none absolute left-0 top-0 h-full w-full">
               <polyline
                 fill="none"
-                stroke="#65BBE9"
+                stroke="#B867C1"
                 strokeWidth="3"
                 points={currentLine.map((point) => `${point.x},${point.y}`).join(" ")}
               />
