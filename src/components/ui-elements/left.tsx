@@ -5,7 +5,7 @@ const LeftUi = () => {
 
       <div className=" absolute left-20 top-8 h-32 w-1/5 -skew-x-12  rounded-r-lg bg-blue-800 shadow">
         <Text />
-        <KikiTalk />
+        {/* <KikiTalk /> */}
       </div>
     </>
   );
