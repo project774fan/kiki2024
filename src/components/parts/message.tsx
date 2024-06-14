@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
 import msglist from "../array/msglist";
-import hokuro from "../../img/parts/ほくろ3.png";
 
 const MsgParts = () => {
   const imglist = msglist();
@@ -10,14 +8,18 @@ const MsgParts = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [scroll, setScroll] = useState<string>("visible");
   const [loading, setLoading] = useState(true);
+  const [trigger, setTrigger] = useState(0); // 変更: トリガー用のカウンター状態
 
-  if (typeof document !== "undefined") {
-    document.body.style.overflow = scroll;
-  }
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = scroll;
+    }
+  }, [scroll]);
 
   const openModal = (index: number) => {
     setSelectedImage(imglist[index].img);
     setScroll("hidden");
+    setTrigger((prev) => prev + 1); // 変更: トリガー用カウンターをインクリメント
   };
 
   const closeModal = () => {
@@ -26,95 +28,79 @@ const MsgParts = () => {
   };
 
   const scaleAnimation = useSpring({
-    transform: `scale(${selectedImage ? 1 : 0.5})`,
+    transform: selectedImage ? "translateY(0%) " : "translateY(-100%) ",
+    from: { transform: "translateY(-100%) " },
+    config: { tension: 200, friction: 30 },
+    reset: true,
   });
 
-  const backgroundAnimation = useSpring({
-    opacity: selectedImage ? 1 : 0,
-    backgroundColor: selectedImage ? "rgba(0, 0, 0, 0.75)" : "rgba(0, 0, 0, 0)",
+  const opacityAnimation = useSpring({
+    opacity: selectedImage ? 1 : 0.5,
+    from: { opacity: 0 },
+
+    reset: true,
   });
 
-  //ページを開いたらダウンロード
-  // const download = async () => {
-  //   const imageUrls = msglist();
+  const download = async () => {
+    try {
+      await Promise.all(
+        imglist.map((image) => {
+          return new Promise((resolve) => {
+            const IllustBox = new window.Image();
+            IllustBox.src = image.img;
+            IllustBox.onload = () => {
+              resolve(null);
+            };
+          });
+        })
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  //   try {
-  //     await Promise.all(
-  //       imageUrls.map((url) => {
-  //         return new Promise((resolve) => {
-  //           const IllustBox = new Image();
-  //           IllustBox.src = url;
-  //           IllustBox.onload = () => {
-  //             resolve(null);
-  //           };
-  //         });
-  //       }),
-  //     );
-  //   } finally {
-  //     // ロード完了後、ローディング状態を終了
-  //     setLoading(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   download();
-  // }, []);
+  useEffect(() => {
+    download();
+  }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
-  //       <div className="h-10 w-10 animate-spin rounded-full border-4 border-nemoBlue border-t-transparent"></div>
-  //       {/* <img
-  //         src={loadingImg}
-  //         alt=""
-  //         className="h-10 w-10 animate-spin object-contain"
-  //       /> */}
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
+        <div className="border-nemoBlue h-10 w-10 animate-spin rounded-full border-4 border-t-transparent"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-full w-full pt-16">
-      <div className=" h-full w-24  bg-slate-600" />
-      {/* トーク */}
+      <div className="h-full w-24 bg-slate-600" />
       <div className="flex h-full w-full">
-        {/* トークリスト */}
         <div className="h-full w-1/2 overflow-y-auto">
-          <div className="h-full w-full border ">
-            <>
-              {imglist.map((list, index) => (
-                // <img
-                //   key={index}
-                //   src={image.img}
-                //   alt="メッセージ"
-                //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
-                //   onClick={() => openModal(index)}
-                // />
-                <p
-                  key={index}
-                  onClick={() => openModal(index)}
-                  className="border p-4 text-2xl hover:bg-neutral-100"
-                >
-                  {list.name}
-                </p>
-              ))}
-            </>
+          <div className="h-full w-full border">
+            {imglist.map((list, index) => (
+              <p
+                key={index}
+                onClick={() => openModal(index)}
+                className="border p-4 text-2xl hover:bg-neutral-100"
+              >
+                {list.name}
+              </p>
+            ))}
           </div>
         </div>
-        {/* トーク画面 */}
-        <div className=" h-full w-1/2">
-          <div className="h-full ">
+        <div className="h-full w-1/2">
+          <div className="h-full">
             {selectedImage && (
-              <div className=" h-full  w-full ">
+              <div className="h-full w-full">
                 <animated.div
-                  // style={backgroundAnimation}
-                  className=" flex h-full  w-full  items-center justify-center "
-                  onClick={closeModal}
+                  key={trigger}
+                  className="flex h-full w-full items-center justify-center"
                 >
                   <animated.img
                     src={selectedImage}
                     alt="Selected Image"
-                    className=" fixed  object-contain "
-                    style={scaleAnimation}
+                    className=" w-4/5 object-contain"
+                    style={{ ...scaleAnimation, ...opacityAnimation }}
                   />
                 </animated.div>
               </div>
@@ -123,41 +109,6 @@ const MsgParts = () => {
         </div>
       </div>
     </div>
-
-    // <div className="flex h-full items-start justify-center ">
-    //   <div className="p-1 sm:p-2 lg:p-4 2xl:p-6">
-    // <>
-    //   {imglist.map((list, index) => (
-    //     // <img
-    //     //   key={index}
-    //     //   src={image.img}
-    //     //   alt="メッセージ"
-    //     //   className="transform cursor-pointer object-contain shadow transition-transform duration-300 hover:scale-105"
-    //     //   onClick={() => openModal(index)}
-    //     // />
-    //     <p key={index} onClick={() => openModal(index)}>
-    //       {list.name}
-    //     </p>
-    //   ))}
-    // </>
-    //   </div>
-    // {selectedImage && (
-    //   <div>
-    //     <animated.div
-    //       style={backgroundAnimation}
-    //       className="fixed left-0 top-0 flex h-full w-full items-center justify-center "
-    //       onClick={closeModal}
-    //     >
-    //       <animated.img
-    //         src={selectedImage}
-    //         alt="Selected Image"
-    //         className=" absolute object-contain px-4 sm:h-3/4 "
-    //         style={scaleAnimation}
-    //       />
-    //     </animated.div>
-    //   </div>
-    // )}
-    // </div>
   );
 };
 

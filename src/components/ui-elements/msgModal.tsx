@@ -41,7 +41,7 @@ interface Handle {
 }
 export const KikiTalkBar = ({ handoleClose }: Handle) => {
   return (
-    <div className=" absolute  flex h-16 w-full bg-red-300">
+    <div className=" absolute  z-50 flex h-16 w-full bg-red-300">
       <div className="my-auto ml-6 text-4xl font-bold text-white">キキトーク</div>
       <button
         onClick={handoleClose}
