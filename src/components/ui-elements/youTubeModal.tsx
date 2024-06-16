@@ -3,6 +3,9 @@ import Modal from "react-modal";
 import customStyles from "./customStyles";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import EnqueteParts from "../parts/enquete";
+import TriangleBG from "./triangleBG";
+import ModalBar from "./modalBar";
+import player from "@/img/player.png";
 
 interface ModalCheck {
   isModalOpne: any;
@@ -15,18 +18,18 @@ const YouTubeModal = ({ isModalOpne, closeModal }: ModalCheck) => {
   };
 
   const link = [
-    "uwe7BrPM8_E",
-    "iiJFxWL2-7Y",
-    "P8BzkUl143s",
-    "Vv7kHw1xXbM",
-    "kLRn2bhf32g",
-    "KzymhDkXQFI",
-    "wmVOIPgd_FI",
-    "EKVoUH91IoU",
-    "Y0Qg_sgCoVo",
-    "HhRq2DrnVb4",
-    "MApSbOI09ng",
-    "9RZ3M3UOUUw",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
+    "B_oZSfF6aOI",
   ];
 
   return (
@@ -38,12 +41,12 @@ const YouTubeModal = ({ isModalOpne, closeModal }: ModalCheck) => {
       closeTimeoutMS={200}
     >
       <div className="absolute  h-full w-full ">
-        <div className=" absolute inset-0 right-0 top-0 w-full">
-          <XMark handoleClose={handoleClose} />
-        </div>
+        <TriangleBG style="absolute" />
 
-        <div className="absolute top-0 flex h-full w-full items-center  justify-center overflow-y-auto">
-          <div className="grid h-full w-4/5 grid-cols-2 gap-4 p-3">
+        <ModalBar title="名言集" logo={player} handoleClose={handoleClose} hidden={false} />
+
+        <div className="absolute top-0 flex h-full w-full items-center  justify-center pt-16">
+          <div className="grid h-full w-full grid-cols-2 gap-4 overflow-y-auto p-3 px-48">
             {link.map((videoId, index) => (
               <>
                 <div className=" aspect-video ">

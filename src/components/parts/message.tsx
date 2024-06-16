@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import msglist from "../array/msglist";
+import Loading from "../ui-elements/loading";
+import loadingImg from "@/img/loading_papet.png";
 
 const MsgParts = () => {
   const imglist = msglist();
@@ -64,11 +66,7 @@ const MsgParts = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
-        <div className="border-nemoBlue h-10 w-10 animate-spin rounded-full border-4 border-t-transparent"></div>
-      </div>
-    );
+    return <Loading loadingImg={loadingImg} />;
   }
 
   return (
@@ -81,7 +79,7 @@ const MsgParts = () => {
               <p
                 key={index}
                 onClick={() => openModal(index)}
-                className="border p-4 text-2xl hover:bg-neutral-100"
+                className="border p-4 text-2xl hover:bg-violet-100"
               >
                 {list.name}
               </p>

@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import swiperImg from "@/img/start/start.webp";
 const Banner = () => {
   return (
-    <div className=" absolute w-80 ">
+    <div className=" absolute w-96 ">
       <Swiper
         className=" bottom-52 left-10 rounded-lg shadow-md "
         spaceBetween={30}
@@ -24,22 +26,22 @@ const Banner = () => {
       >
         <SwiperSlide>
           <Link href="/gacha">
-            <img src="img/ui-elements/background.png" alt="1" />
+            <Image src={swiperImg} alt="1" />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/gacha">
-            <img src="img/ui-elements/background.png" alt="2" />
+            <Image src={swiperImg} alt="2" />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/gacha">
-            <img src="img/ui-elements/background.png" alt="3" />
+            <Image src={swiperImg} alt="3" />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/gacha">
-            <img src="img/ui-elements/background.png" alt="4" />
+            <Image src={swiperImg} alt="4" />
           </Link>
         </SwiperSlide>
       </Swiper>

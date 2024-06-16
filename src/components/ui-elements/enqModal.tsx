@@ -3,6 +3,9 @@ import Modal from "react-modal";
 import customStyles from "./customStyles";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import EnqueteParts from "../parts/enquete";
+import TriangleBG from "./triangleBG";
+import enquete_log from "@/img/enquete_logo.png";
+import ModalBar from "./modalBar";
 
 interface ModalCheck {
   isModalOpne: any;
@@ -22,29 +25,13 @@ const EnqModal = ({ isModalOpne, closeModal }: ModalCheck) => {
       style={customStyles}
       closeTimeoutMS={200}
     >
-      <div className=" h-full w-full">
-        <XMark handoleClose={handoleClose} />
-        <div className="mx-auto w-1/2">{<EnqueteParts />}</div>
+      <TriangleBG style="absolute" />
+      <ModalBar title="アンケート" logo={enquete_log} handoleClose={handoleClose} hidden={false} />
+      <div className=" absolute h-full w-full pt-16">
+        <div className="mx-auto w-1/2 ">{/* <EnqueteParts /> */}</div>
       </div>
     </Modal>
   );
 };
 
 export default EnqModal;
-
-interface Handle {
-  handoleClose: () => void;
-}
-
-export const XMark = ({ handoleClose }: Handle) => {
-  return (
-    <div className="flex w-full">
-      <button
-        onClick={handoleClose}
-        className=" ml-auto mr-6 mt-2 transition-transform duration-300 hover:scale-105"
-      >
-        <XMarkIcon className=" size-12 " />
-      </button>
-    </div>
-  );
-};

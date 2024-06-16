@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import Background from "@/components/ui-elements/background";
-import Top from "../top";
+import Image from "next/image";
+import startImg from "@/img/start/start.webp";
 
 export default function Home() {
   const router = useRouter();
@@ -41,11 +41,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           onClick={handleClick}
         >
-          <img
-            src="img/ui-elements/start/start.png"
-            alt="start"
-            className="h-full w-full object-contain"
-          />
+          <Image src={startImg} alt="start" className="h-full w-full object-contain" />
         </motion.div>
       </div>
     </>

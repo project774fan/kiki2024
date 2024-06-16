@@ -1,5 +1,5 @@
 const RightUi = () => {
-  const style = "w-1/12 h-16 bg-white opacity-80 mx-6 -skew-x-12 rounded-lg";
+  const style = "w-1/12 h-16 bg-purple-100 opacity-80 mx-6 -skew-x-12 rounded-lg";
   return (
     <>
       <div className=" absolute  right-6 top-8 mr-12 flex w-full justify-end ">

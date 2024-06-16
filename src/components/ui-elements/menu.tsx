@@ -17,7 +17,7 @@ import youtubeBtn from "@/img/menu/名言集.webp";
 import creditBtn from "@/img/menu/参加者.webp";
 
 const Menu = () => {
-  const linkStyle = "ml-5 mr-10  hover:scale-105 ";
+  const linkStyle = "ml-5 mr-16  hover:scale-105 ";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);
@@ -58,7 +58,7 @@ const Menu = () => {
 
       <Banner />
 
-      <div className=" absolute bottom-0 mx-5 flex  h-1/2  w-full  -skew-x-12 items-center overscroll-contain rounded-md bg-white bg-opacity-70 shadow-xl"></div>
+      <div className=" absolute bottom-0 mx-5 flex  h-1/2  w-full  -skew-x-12 items-center overscroll-contain rounded-md bg-purple-100 bg-opacity-70 shadow-xl"></div>
       <div className="relative ml-5 flex w-3/4">
         <button onClick={openMsg} className={linkStyle}>
           <Image src={messageBtn} alt="メッセージ" />
@@ -73,7 +73,7 @@ const Menu = () => {
           <Image src={youtubeBtn} alt="YouTube" />
         </button>
         <button onClick={openYT} className={linkStyle}>
-          <Image src={creditBtn} alt="credit" className="rounded-2xl bg-white shadow" />
+          <Image src={creditBtn} alt="credit" className="rounded-2xl " />
         </button>
       </div>
     </footer>

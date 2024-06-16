@@ -1,9 +1,9 @@
 const LeftUi = () => {
   return (
     <>
-      <div className=" absolute left-14 top-8 z-10 h-32 w-12 rounded-l-lg bg-blue-800"></div>
+      <div className=" absolute left-14 top-8 z-10 h-32 w-12 rounded-l-lg bg-indigo-900"></div>
 
-      <div className=" absolute left-20 top-8 h-32 w-1/5 -skew-x-12  rounded-r-lg bg-blue-800 shadow">
+      <div className=" absolute left-20 top-8 h-32 w-1/5 -skew-x-12  rounded-r-lg bg-indigo-900 shadow">
         <Text />
         {/* <KikiTalk /> */}
       </div>

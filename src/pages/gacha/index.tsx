@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import TriangleBG from "@/components/ui-elements/triangleBG";
+import puppet from "@/img/gacha/gacha_pape.png";
+import paper from "@/img/gacha/gacha_paper.png";
+import Image from "next/image";
 
 interface Point {
   x: number;
@@ -97,22 +101,10 @@ const Gacha = () => {
 
   return (
     <>
-      <img
-        src="img/ui-elements/illust_bg.png"
-        alt="背景"
-        className="absolute h-full w-full object-cover"
-      />
+      <TriangleBG style="fixed" />
       <div className="transfor fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 bg-white shadow-lg sm:bottom-8  sm:w-auto">
-        <img
-          src="img/ui-elements/gacha/gacha_paper.png"
-          alt="台紙"
-          className="absolute h-full w-full object-cover"
-        />
-        <img
-          src="img/ui-elements/gacha/gacha_pape.png"
-          alt="パペ"
-          className="absolute object-contain p-16 sm:p-40"
-        />
+        <Image src={paper} alt="台紙" className="absolute h-full w-full object-cover" />
+        <Image src={puppet} alt="パペ" className="absolute object-contain p-16 sm:p-40" />
         <div
           role="button"
           tabIndex={0}
