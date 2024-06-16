@@ -27,8 +27,8 @@ const EnqModal = ({ isModalOpne, closeModal }: ModalCheck) => {
     >
       <TriangleBG style="absolute" />
       <ModalBar title="アンケート" logo={enquete_log} handoleClose={handoleClose} hidden={false} />
-      <div className=" absolute h-full w-full pt-16">
-        <div className="mx-auto w-3/4 ">
+      <div className=" absolute top-0 mx-auto flex  h-full w-full  pt-16">
+        <div className=" w-full overflow-y-auto ">
           <EnqueteParts />
         </div>
       </div>

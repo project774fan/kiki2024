@@ -74,7 +74,7 @@ const EnqueteParts = () => {
     <>
       {enqList.map((data, index) => (
         <>
-          <div className="my-4 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-200 shadow-md shadow-violet-300 transition-transform duration-300 hover:scale-105">
+          <div className=" mx-auto my-4 w-3/4 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-200 shadow-md shadow-violet-300 transition-transform duration-300 hover:scale-105 ">
             <button
               onClick={() => openModal(index)}
               className=" relative  flex w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-80 py-6 pl-9"
