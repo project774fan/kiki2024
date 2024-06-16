@@ -48,10 +48,10 @@ function creditlist() {
       name: "wahoo",
       url: "https://x.com/wahoo_ppt",
     },
-    {
-      name: "Yu-ki",
-      url: "https://x.com/yu_ki0939",
-    },
+    // {
+    //   name: "Yu-ki",
+    //   url: "https://x.com/yu_ki0939",
+    // },
     {
       name: "アウラ",
       url: "https://x.com/aura_yagg",
