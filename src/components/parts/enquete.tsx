@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
-import illustlist from "../array/illustlist";
-import loadingImg from "../../img/loading.png";
+import loadingImg from "@/img/puppet.png";
 import enqlist from "../array/enqlist";
+import Loading from "../ui-elements/loading";
+import puppetImg from "@/img/puppet.png";
 
 interface Url {
   name: string;
@@ -41,63 +42,55 @@ const EnqueteParts = () => {
   });
 
   //ページを開いたらダウンロード
-  // const download = async () => {
-  //   const imageUrls = illustlist();
+  const download = async () => {
+    const imageUrls = enqlist();
 
-  //   try {
-  //     await Promise.all(
-  //       imageUrls.map((url: Url) => {
-  //         return new Promise((resolve) => {
-  //           const IllustBox = new window.Image();
-  //           IllustBox.src = url.img;
-  //           IllustBox.onload = () => {
-  //             resolve(null);
-  //           };
-  //         });
-  //       })
-  //     );
-  //   } finally {
-  //     // ロード完了後、ローディング状態を終了
-  //     setLoading(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   download();
-  // }, []);
+    try {
+      await Promise.all(
+        imageUrls.map((image) => {
+          return new Promise((resolve) => {
+            const IllustBox = new window.Image();
+            IllustBox.src = image.img;
+            IllustBox.onload = () => {
+              resolve(null);
+            };
+          });
+        })
+      );
+    } finally {
+      // ロード完了後、ローディング状態を終了
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    download();
+  }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transform">
-  //       <Image src={loadingImg} alt="" className="h-10 w-10 animate-spin object-contain" />
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return <Loading loadingImg={loadingImg} />;
+  }
 
   return (
     <>
       {enqList.map((data, index) => (
         <>
-          <div className="my-2 -skew-x-12 overflow-hidden rounded-md border-2 border-white  shadow transition-transform duration-300 hover:scale-105">
-            {/* <div>
-              <img
-                key={index}
-                src="img/ui-elements/illust_icon.png"
-                alt="背景"
-                className=" absolute h-full w-full opacity-50"
-              />
-              <img
-                key={index}
-                src={image.img}
-                alt="メッセージ"
-                className="skew-x-12 transform cursor-pointer object-cover "
-                onClick={() => openModal(index)}
-              />
-            </div> */}
+          <div className="my-4 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-100  shadow transition-transform duration-300 hover:scale-105">
             <button
               onClick={() => openModal(index)}
-              className=" relative w-full skew-x-12 scale-105 bg-gray-500 pl-9 text-start text-3xl font-bold leading-relaxed text-purple-400"
+              className=" relative  flex w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-80 py-6 pl-9"
             >
-              {data.enquete}
+              <div className="pl-8">
+                <div className=" relative ">
+                  <p className=" absolute flex h-full w-full items-center justify-center text-center text-xl font-bold text-violet-100">
+                    {index + 1}
+                  </p>
+                  <Image src={puppetImg} alt="puppet" className=" h-12 w-fit object-contain " />
+                </div>
+              </div>
+
+              <p className=" pl-2 text-start text-3xl  leading-relaxed text-violet-100">
+                {data.enquete}
+              </p>
             </button>
           </div>
         </>

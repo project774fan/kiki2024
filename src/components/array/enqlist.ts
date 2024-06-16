@@ -21,7 +21,7 @@ function enqlist() {
       img: "img/enquete/res_costume.webp",
     },
     {
-      enquete: "住むなら",
+      enquete: "住むなら？",
       img: "img/enquete/res_neighbourhood.webp",
     },
     {
