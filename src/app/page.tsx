@@ -10,10 +10,6 @@ import Start from "@/pages/start";
 export default function Home() {
   return (
     <div className="h-screen w-screen">
-      {/* <Background />
-      <LeftUi />
-      <RightUi />
-      <Menu /> */}
       <Start />
     </div>
   );
