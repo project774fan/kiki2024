@@ -60,6 +60,12 @@ function msglist() {
       icon: "img/message/icon/wahoo.webp",
       img: "img/message/wahoo_サイト用.webp",
     },
+
+    {
+      name: "アウラ",
+      icon: "img/message/icon/アウラ.webp",
+      img: "img/message/アウラ_サイト用.webp",
+    },
     {
       name: "あませ みはり",
       icon: "img/message/icon/あませみはり.webp",
@@ -136,9 +142,24 @@ function msglist() {
       img: "img/message/たまきゅー_サイト用.webp",
     },
     {
+      name: "ちくわ屋",
+      icon: "img/message/icon/ちくわ屋.webp",
+      img: "img/message/ちくわ屋_サイト用.webp",
+    },
+    {
       name: "ちなり",
       icon: "img/message/icon/ちなり.webp",
       img: "img/message/ちなり_サイト用.webp",
+    },
+    {
+      name: "ディアトレーネ",
+      icon: "img/message/icon/ディアトレーネ.webp",
+      img: "img/message/ディアトレーネ_サイト用.webp",
+    },
+    {
+      name: "テリオス",
+      icon: "img/message/icon/テリオス.webp",
+      img: "img/message/テリオス_サイト用.webp",
     },
     {
       name: "トーヤ",
