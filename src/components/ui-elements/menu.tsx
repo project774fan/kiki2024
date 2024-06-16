@@ -58,7 +58,6 @@ const Menu = () => {
     // setClick(true);
   };
 
-  console.log("モーダル", isMsgOpne);
   return (
     <footer className="absolute bottom-10 left-1/2 w-11/12 -translate-x-1/2 transform">
       <MsgModal isModalOpne={isMsgOpne} closeModal={closeModal} />

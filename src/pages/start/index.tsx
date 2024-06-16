@@ -22,7 +22,6 @@ export default function Home() {
   };
 
   if (!isMounted) return null;
-
   return (
     <>
       <div className="flex h-screen items-center justify-center ">

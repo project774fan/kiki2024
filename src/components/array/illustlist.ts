@@ -28,7 +28,7 @@ function illustlist() {
     {
       name: "しゃふの植杉",
       icon: "img/illusts/icon/しゃふの植杉.webp",
-      illust: "img/illusts/illust/KYO_イラスト.webp",
+      illust: "img/illusts/illust/しゃふの植杉_イラスト.webp",
     },
     {
       name: "スミス",
