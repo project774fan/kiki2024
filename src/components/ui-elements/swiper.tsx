@@ -9,7 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import swiperImg from "@/img/gacha/gacya_banner.png";
 const Banner = () => {
   return (
-    <div className="absolute bottom-72  w-1/5 ">
+    <div className=" w-1/5">
       <Swiper
         className="  left-10 rounded-lg shadow-md "
         spaceBetween={30}

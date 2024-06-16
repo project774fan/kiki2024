@@ -51,30 +51,31 @@ const Menu = () => {
 
   console.log("モーダル", isMsgOpne);
   return (
-    <footer className=" fixed bottom-10 left-10 right-10">
+    <footer className="absolute bottom-10 left-1/2 w-11/12 -translate-x-1/2 transform">
       <MsgModal isModalOpne={isMsgOpne} closeModal={closeModal} />
       <EnqModal isModalOpne={isEnqOpne} closeModal={closeModal} />
       <YouTubeModal isModalOpne={isYouTubeOpen} closeModal={closeModal} />
 
-      <Banner />
-
-      <div className=" absolute bottom-0 mx-5 flex  h-1/2  w-full  -skew-x-12 items-center overscroll-contain rounded-md bg-purple-100 bg-opacity-70 shadow-xl"></div>
-      <div className="relative ml-5 flex w-3/4">
-        <button onClick={openMsg} className={linkStyle}>
-          <Image src={messageBtn} alt="メッセージ" />
-        </button>
-        <Link href="/gacha" className={linkStyle}>
-          <Image src={illustBtn} alt="イラスト" />
-        </Link>
-        <button onClick={openEnq} className={linkStyle}>
-          <Image src={enqueteBtn} alt="アンケート" />
-        </button>
-        <button onClick={openYT} className={linkStyle}>
-          <Image src={youtubeBtn} alt="YouTube" />
-        </button>
-        <button onClick={openYT} className={linkStyle}>
-          <Image src={creditBtn} alt="credit" className="rounded-2xl " />
-        </button>
+      <div>
+        <Banner />
+        <div className="absolute bottom-0 mx-5 flex h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl"></div>
+        <div className="relative mx-auto flex w-11/12 justify-center">
+          <button onClick={openMsg} className={linkStyle}>
+            <Image src={messageBtn} alt="メッセージ" />
+          </button>
+          <Link href="/gacha" className={linkStyle}>
+            <Image src={illustBtn} alt="イラスト" />
+          </Link>
+          <button onClick={openEnq} className={linkStyle}>
+            <Image src={enqueteBtn} alt="アンケート" />
+          </button>
+          <button onClick={openYT} className={linkStyle}>
+            <Image src={youtubeBtn} alt="YouTube" />
+          </button>
+          <button onClick={openYT} className={linkStyle}>
+            <Image src={creditBtn} alt="credit" className="rounded-2xl " />
+          </button>
+        </div>
       </div>
     </footer>
   );
