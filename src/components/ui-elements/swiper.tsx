@@ -6,12 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import swiperImg from "@/img/start/start.webp";
+import swiperImg from "@/img/gacha/gacya_banner.png";
 const Banner = () => {
   return (
-    <div className=" absolute w-96 ">
+    <div className="absolute bottom-72  w-1/5 ">
       <Swiper
-        className=" bottom-52 left-10 rounded-lg shadow-md "
+        className="  left-10 rounded-lg shadow-md "
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
