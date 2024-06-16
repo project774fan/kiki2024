@@ -76,13 +76,20 @@ const MsgParts = () => {
         <div className="h-full w-1/2 overflow-y-auto">
           <div className="h-full w-full border">
             {imglist.map((list, index) => (
-              <p
-                key={index}
-                onClick={() => openModal(index)}
-                className="border p-4 text-2xl hover:bg-violet-100"
-              >
-                {list.name}
-              </p>
+              <>
+                <button
+                  onClick={() => openModal(index)}
+                  className="flex w-full border p-4  hover:bg-violet-100"
+                >
+                  <img src={list.icon} alt="アイコン" className=" h-12 w-12 " />
+                  <p
+                    key={index}
+                    className=" my-auto flex h-full items-center justify-center pl-2 text-2xl"
+                  >
+                    {list.name}
+                  </p>
+                </button>
+              </>
             ))}
           </div>
         </div>

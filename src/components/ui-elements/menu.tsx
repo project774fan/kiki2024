@@ -15,12 +15,14 @@ import illustBtn from "@/img/menu/イラスト.webp";
 import enqueteBtn from "@/img/menu/アンケート.webp";
 import youtubeBtn from "@/img/menu/名言集.webp";
 import creditBtn from "@/img/menu/参加者.webp";
+import CreditModal from "./creditModal";
 
 const Menu = () => {
   const linkStyle = "ml-5 mr-16  hover:scale-105 ";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);
+  const [isCreditOpen, setIsCreditOpen] = useState(false);
   // const [click, setClick] = useState(true);
 
   //YouTube
@@ -41,11 +43,18 @@ const Menu = () => {
     // setClick(false);
   };
 
+  //参加者
+  const openCrecit = () => {
+    setIsCreditOpen(true);
+    // setClick(false);
+  };
+
   //モーダル閉じる
   const closeModal = () => {
     setIsYouTubeOpen(false);
     setIsMsgOpne(false);
     setIsEnqOpne(false);
+    setIsCreditOpen(false);
     // setClick(true);
   };
 
@@ -55,6 +64,7 @@ const Menu = () => {
       <MsgModal isModalOpne={isMsgOpne} closeModal={closeModal} />
       <EnqModal isModalOpne={isEnqOpne} closeModal={closeModal} />
       <YouTubeModal isModalOpne={isYouTubeOpen} closeModal={closeModal} />
+      <CreditModal isModalOpne={isCreditOpen} closeModal={closeModal} />
 
       <div>
         <Banner />
@@ -72,7 +82,7 @@ const Menu = () => {
           <button onClick={openYT} className={linkStyle}>
             <Image src={youtubeBtn} alt="YouTube" />
           </button>
-          <button onClick={openYT} className={linkStyle}>
+          <button onClick={openCrecit} className={linkStyle}>
             <Image src={creditBtn} alt="credit" className="rounded-2xl " />
           </button>
         </div>
