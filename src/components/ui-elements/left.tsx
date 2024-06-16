@@ -23,7 +23,7 @@ const Text = () => {
       <div className=" ml-6 w-full ">
         <p className=" mb-1 text-base text-white sm:text-3xl">パペット</p>
         <Gage />
-        <p className="mt-1 text-base text-sky-400 sm:text-2xl">99999999/999999999</p>
+        <p className="mt-1 text-base text-sky-400 sm:text-2xl">999999/9999999</p>
       </div>
     </div>
   );
