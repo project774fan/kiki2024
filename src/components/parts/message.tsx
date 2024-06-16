@@ -47,13 +47,22 @@ const MsgParts = () => {
     try {
       await Promise.all(
         imglist.map((image) => {
-          return new Promise((resolve) => {
-            const IllustBox = new window.Image();
-            IllustBox.src = image.img;
-            IllustBox.onload = () => {
-              resolve(null);
-            };
-          });
+          return Promise.all([
+            new Promise((resolve) => {
+              const IllustBoxImg = new window.Image();
+              IllustBoxImg.src = image.img;
+              IllustBoxImg.onload = () => {
+                resolve(null);
+              };
+            }),
+            new Promise((resolve) => {
+              const IllustBoxIcon = new window.Image();
+              IllustBoxIcon.src = image.icon;
+              IllustBoxIcon.onload = () => {
+                resolve(null);
+              };
+            }),
+          ]);
         })
       );
     } finally {
