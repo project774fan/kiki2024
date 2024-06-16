@@ -59,7 +59,7 @@ const Menu = () => {
       <div>
         <Banner />
         <div className="absolute bottom-0 mx-5 flex h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl"></div>
-        <div className="relative mx-auto flex w-11/12 justify-center">
+        <div className="relative  flex w-4/5 justify-center">
           <button onClick={openMsg} className={linkStyle}>
             <Image src={messageBtn} alt="メッセージ" />
           </button>
