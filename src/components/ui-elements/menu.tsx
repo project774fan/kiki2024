@@ -18,7 +18,7 @@ import creditBtn from "@/img/menu/参加者.webp";
 import CreditModal from "./creditModal";
 
 const Menu = () => {
-  const linkStyle = "ml-5 mr-16  hover:scale-105 ";
+  const linkStyle = "ml-5 mr-16  hover:scale-105 transition-transform duration-300  ";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);

@@ -4,6 +4,7 @@ import TriangleBG from "@/components/ui-elements/triangleBG";
 import puppet from "@/img/gacha/gacha_pape.png";
 import paper from "@/img/gacha/gacha_paper.png";
 import Image from "next/image";
+import Head from "next/head";
 
 interface Point {
   x: number;
@@ -101,6 +102,9 @@ const Gacha = () => {
 
   return (
     <>
+      <Head>
+        <title>募集</title>
+      </Head>
       <TriangleBG style="fixed" />
       <div className="transfor fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 bg-white shadow-lg sm:bottom-8  sm:w-auto">
         <Image src={paper} alt="台紙" className="absolute h-full w-full object-cover" />

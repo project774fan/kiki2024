@@ -8,6 +8,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="icon" href={favicon.src} />
+        <title>シスイアーカイブ</title>
         <meta httpEquiv="Content-Language" content="ja" />
       </Head>
       <Component {...pageProps} />

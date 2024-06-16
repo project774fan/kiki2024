@@ -89,7 +89,7 @@ const IllustParts = () => {
                 onClick={() => openModal(index)}
               />
             </div>
-            <p className=" relative w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-90 text-center text-xs font-bold text-purple-200 sm:text-2xl">
+            <p className=" relative w-full   bg-indigo-950 bg-opacity-90 text-center text-xs font-bold text-purple-200 sm:text-2xl">
               {image.name}
             </p>
           </div>
