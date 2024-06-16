@@ -38,12 +38,12 @@ const CreditModal = ({ isModalOpne, closeModal }: ModalCheck) => {
           hidden={false}
         />
 
-        <div className="absolute  flex h-fit w-full items-center  justify-center pt-24">
-          <div className=" boerder-violet-400 mx-48 grid h-5/6 grid-cols-3 gap-4 overflow-y-auto rounded-md bg-white bg-opacity-80  p-3 shadow-lg shadow-violet-300">
+        <div className="absolute top-0 flex h-full w-full items-center  justify-center pb-8 pt-24">
+          <div className=" boerder-violet-400 grid h-full  grid-cols-3 gap-3 overflow-y-auto rounded-md bg-white bg-opacity-80  p-2 shadow-lg shadow-violet-300">
             {list.map((list, index) => (
               <>
                 <a href={list.url} target="_blank" className=" hover:text-violet-400">
-                  <p className=" text-start font-bold">{list.name}</p>
+                  <p className="text-start font-bold">{list.name}</p>
                 </a>
               </>
             ))}
