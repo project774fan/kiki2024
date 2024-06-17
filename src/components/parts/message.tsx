@@ -88,13 +88,11 @@ const MsgParts = () => {
               <>
                 <button
                   onClick={() => openModal(index)}
+                  key={index}
                   className="flex w-full border p-2  pl-3 hover:bg-violet-100 sm:p-4 "
                 >
                   <img src={list.icon} alt="アイコン" className=" h-10 w-10 sm:h-12 sm:w-12 " />
-                  <p
-                    key={index}
-                    className=" my-auto flex h-full items-center justify-center pl-2 text-lg sm:text-2xl"
-                  >
+                  <p className=" my-auto flex h-full items-center justify-center pl-2 text-lg sm:text-2xl">
                     {list.name}
                   </p>
                 </button>
