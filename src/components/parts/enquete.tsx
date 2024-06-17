@@ -74,21 +74,24 @@ const EnqueteParts = () => {
     <>
       {enqList.map((data, index) => (
         <>
-          <div className=" mx-auto my-4 w-3/4 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-200 shadow-md shadow-violet-300 transition-transform duration-300 hover:scale-105 ">
+          <div className=" mx-auto my-4 w-11/12 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-200 shadow-md shadow-violet-300 transition-transform duration-300 hover:scale-105 sm:w-3/4 ">
             <button
               onClick={() => openModal(index)}
-              className=" relative  flex w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-80 py-6 pl-9"
+              className=" relative  flex w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-80 py-3 pl-5 sm:py-6 sm:pl-9"
             >
-              <div className="pl-8">
+              <div className="pl-0 sm:pl-8">
                 <div className=" relative ">
-                  <p className=" absolute flex h-full w-full items-center justify-center text-center text-xl font-bold text-violet-100">
+                  <p className=" absolute flex h-full w-full items-center justify-center text-center text-base font-bold text-violet-100 sm:text-xl">
                     {index + 1}
                   </p>
-                  <Image src={puppetImg} alt="puppet" className=" h-12 w-fit object-contain " />
+                  <Image
+                    src={puppetImg}
+                    alt="puppet"
+                    className=" h-8 w-fit object-contain sm:h-12 "
+                  />
                 </div>
               </div>
-
-              <p className=" pl-2 text-start text-3xl  leading-relaxed text-violet-100">
+              <p className=" pl-2 text-start text-xl leading-relaxed text-violet-100 sm:text-3xl">
                 {data.enquete}
               </p>
             </button>
