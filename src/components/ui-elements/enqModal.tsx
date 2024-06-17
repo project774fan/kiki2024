@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import customStyles from "./customStyles";
 import { XMarkIcon } from "@heroicons/react/24/solid";
@@ -17,12 +17,37 @@ const EnqModal = ({ isModalOpne, closeModal }: ModalCheck) => {
     closeModal();
   };
 
+  //モーダルレスポンシブ
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  const isMobile = windowWidth <= 640;
+  const adjustedStyles = {
+    ...customStyles,
+    content: {
+      ...customStyles.content,
+      right: isMobile ? "5%" : "10%",
+      left: isMobile ? "5%" : "10%",
+      top: isMobile ? "2%" : "3%",
+      bottom: isMobile ? "2%" : "3%",
+    },
+  };
+
   return (
     <Modal
       isOpen={isModalOpne}
       onRequestClose={handoleClose}
       contentLabel="モーダル"
-      style={customStyles}
+      style={adjustedStyles}
       closeTimeoutMS={200}
     >
       <TriangleBG style="absolute" />
