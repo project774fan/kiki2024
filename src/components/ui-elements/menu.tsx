@@ -18,7 +18,8 @@ import creditBtn from "@/img/menu/参加者.webp";
 import CreditModal from "./creditModal";
 
 const Menu = () => {
-  const linkStyle = "ml-5 mr-16  hover:scale-105 transition-transform duration-300  ";
+  const linkStyle =
+    "sm:ml-5 sm:mr-16 ml-auto mr-auto hover:scale-105 transition-transform duration-300 drop-shadow-lg w-full";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);
@@ -59,22 +60,22 @@ const Menu = () => {
   };
 
   return (
-    <footer className="absolute bottom-10 left-1/2 w-11/12 -translate-x-1/2 transform">
+    <footer className="absolute bottom-4 left-1/2 w-11/12 -translate-x-1/2 transform sm:bottom-10 ">
       <MsgModal isModalOpne={isMsgOpne} closeModal={closeModal} />
       <EnqModal isModalOpne={isEnqOpne} closeModal={closeModal} />
       <YouTubeModal isModalOpne={isYouTubeOpen} closeModal={closeModal} />
       <CreditModal isModalOpne={isCreditOpen} closeModal={closeModal} />
 
-      <div>
+      <div className="flex  sm:block">
         <Banner />
-        <div className="absolute bottom-0 mx-5 flex h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl"></div>
-        <div className="relative  flex w-4/5 justify-center">
-          <button onClick={openMsg} className={linkStyle}>
-            <Image src={messageBtn} alt="メッセージ" />
-          </button>
+        <div className="absolute bottom-0 mx-5 hidden h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl sm:block"></div>
+        <div className="relative ml-auto h-auto w-1/3 justify-center sm:ml-0 sm:flex sm:h-1/3 sm:w-4/5">
           <Link href="/gacha" className={linkStyle}>
             <Image src={illustBtn} alt="イラスト" />
           </Link>
+          <button onClick={openMsg} className={linkStyle}>
+            <Image src={messageBtn} alt="メッセージ" />
+          </button>
           <button onClick={openEnq} className={linkStyle}>
             <Image src={enqueteBtn} alt="アンケート" />
           </button>

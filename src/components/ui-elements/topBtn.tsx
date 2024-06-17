@@ -6,7 +6,7 @@ import React from "react";
 const TopBtn = () => {
   return (
     <div className=" fixed bottom-6 right-10 z-10 transition-transform duration-200 hover:scale-105">
-      <Link href={"/top"} className="">
+      <Link href={"/top"} className=" drop-shadow-lg">
         <p className="  absolute flex h-full w-full items-center justify-center font-bold text-white hover:text-yellow-100">
           戻る
         </p>

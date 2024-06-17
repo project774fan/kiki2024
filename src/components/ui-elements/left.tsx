@@ -15,15 +15,15 @@ export default LeftUi;
 const Text = () => {
   return (
     <div className="ml-6 flex h-full skew-x-12 items-center">
-      <div className="  sm:text-4xl">
+      <div className=" text-xl sm:text-4xl">
         <p className="-skew-x-12 text-yellow-500">Lv.</p>
         <p className="-skew-x-12 text-white">99</p>
       </div>
 
-      <div className=" ml-6 w-full ">
-        <p className=" mb-1 text-base text-white sm:text-3xl">パペット</p>
+      <div className=" ml-3 w-full sm:ml-6 ">
+        <p className=" text-base text-white sm:mb-1 sm:text-3xl">パペット</p>
         <Gage />
-        <p className="mt-1 text-base text-sky-400 sm:text-2xl">999999/9999999</p>
+        <p className="text-base text-sky-400 sm:mt-1 sm:text-2xl">999999/9999999</p>
       </div>
     </div>
   );
