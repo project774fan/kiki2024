@@ -97,6 +97,11 @@ function msglist() {
       img: "img/message/きま_サイト用.webp",
     },
     {
+      name: "こぶりん",
+      icon: "img/message/icon/こぶりん.webp",
+      img: "img/message/こぶりん_サイト用.webp",
+    },
+    {
       name: "げつΩ",
       icon: "img/message/icon/げつΩ.webp",
       img: "img/message/げつΩ_サイト用.webp",
@@ -210,6 +215,11 @@ function msglist() {
       name: "ピポ モリナガ",
       icon: "img/message/icon/ピポモリナガ.webp",
       img: "img/message/ピポ_モリナガ_サイト用.webp",
+    },
+    {
+      name: "ヒロ",
+      icon: "img/message/icon/ヒロ.webp",
+      img: "img/message/ヒロ_サイト用.webp",
     },
     {
       name: "ぷっちょ",
