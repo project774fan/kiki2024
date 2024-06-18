@@ -14,7 +14,7 @@ interface Handle {
 export const ModalBar = ({ handoleClose, logo, title, hidden }: Handle) => {
   return (
     <div className=" absolute  z-50 flex h-12 w-full bg-violet-300 md:h-14 xl:h-16 ">
-      <Image src={logo} alt="ロゴ" className=" w-fit object-contain py-4 pl-4 sm:pl-6" />
+      <Image src={logo} alt="ロゴ" className="w-auto object-contain py-4 pl-4 sm:pl-6" />
       <div className="my-auto pl-2 text-2xl font-bold text-white md:text-3xl xl:text-4xl">
         {title}
       </div>
