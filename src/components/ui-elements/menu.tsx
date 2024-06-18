@@ -15,7 +15,7 @@ import CreditModal from "./creditModal";
 
 const Menu = () => {
   const linkStyle =
-    "xl:ml-5 xl:mr-16 ml-auto mr-auto hover:scale-105 transition-transform duration-300 drop-shadow-lg w-full";
+    "xl:ml-5 xl:mr-16 ml-auto mr-auto hover:scale-105 transition-transform duration-300 drop-shadow-lg w-full md:mb-2";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);
