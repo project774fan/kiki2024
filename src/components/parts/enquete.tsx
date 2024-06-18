@@ -109,7 +109,7 @@ const EnqueteParts = () => {
             <animated.img
               src={selectedImage}
               alt="Selected Image"
-              className=" absolute rounded-lg object-contain px-4 sm:h-3/4"
+              className="z-50 rounded-lg object-contain px-4 sm:h-3/4"
               style={scaleAnimation}
             />
           </animated.div>
