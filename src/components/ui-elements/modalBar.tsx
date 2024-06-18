@@ -19,7 +19,7 @@ export const ModalBar = ({ handoleClose, logo, title, hidden }: Handle) => {
         {title}
       </div>
 
-      {hidden && <Image src={question} alt="ロゴ" className=" w-fit object-contain py-4 pl-3" />}
+      {hidden && <Image src={question} alt="ロゴ" className=" w-auto object-contain py-4 pl-3" />}
       <button
         onClick={handoleClose}
         className="ml-auto mr-6 transition-transform duration-300 hover:scale-105"
