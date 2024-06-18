@@ -70,8 +70,8 @@ const YouTubeModal = ({ isModalOpne, closeModal }: ModalCheck) => {
 
         <ModalBar title="名言集" logo={player} handoleClose={handoleClose} hidden={false} />
 
-        <div className="absolute top-0 flex h-full w-full items-center  justify-center pt-12 sm:pt-16">
-          <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto p-3 px-2 sm:grid-cols-2 sm:px-48">
+        <div className="absolute top-0 flex h-full w-full items-center  justify-center pt-12 md:pt-14 xl:pt-16">
+          <div className="grid h-full w-full grid-cols-1 gap-4 overflow-y-auto p-3 px-2 sm:grid-cols-2 xl:px-48">
             {link.map((videoId, index) => (
               <div key={index} className=" aspect-video ">
                 <iframe
