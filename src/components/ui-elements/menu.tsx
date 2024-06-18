@@ -1,10 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import msgBtn from "../../../public/img/ui-elements/massageBtn.png";
-
-import eventBtn from "../../../public/img/ui-elements/eventBtn.png";
-import hokuroBtn from "../../../public/img/ui-elements/hokuroBtn.png";
 import MsgModal from "./msgModal";
 import React, { useState } from "react";
 import EnqModal from "./enqModal";
@@ -19,7 +15,7 @@ import CreditModal from "./creditModal";
 
 const Menu = () => {
   const linkStyle =
-    "sm:ml-5 sm:mr-16 ml-auto mr-auto hover:scale-105 transition-transform duration-300 drop-shadow-lg w-full";
+    "xl:ml-5 xl:mr-16 ml-auto mr-auto hover:scale-105 transition-transform duration-300 drop-shadow-lg w-full";
   const [isMsgOpne, setIsMsgOpne] = useState(false);
   const [isEnqOpne, setIsEnqOpne] = useState(false);
   const [isYouTubeOpen, setIsYouTubeOpen] = useState(false);

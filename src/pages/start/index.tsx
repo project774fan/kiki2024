@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import startImg from "@/img/start/start.webp";
+import startImg from "@/img/start/start.png";
 
 export default function Home() {
   const router = useRouter();
@@ -34,13 +34,13 @@ export default function Home() {
         />
         {/* <Top /> */}
         <motion.div
-          className=" absolute z-50 flex h-full w-full cursor-pointer items-center justify-center  "
+          className=" absolute z-50 flex h-full w-full cursor-pointer items-center justify-center"
           initial={{ scale: 1 }}
           animate={isClicked ? { scale: 2, opacity: 0 } : { scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
           onClick={handleClick}
         >
-          <Image src={startImg} alt="start" className="h-full w-full object-contain" />
+          <Image src={startImg} alt="start" className=" h-full w-full object-cover object-bottom" />
         </motion.div>
       </div>
     </>
