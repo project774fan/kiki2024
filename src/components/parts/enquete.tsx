@@ -77,21 +77,21 @@ const EnqueteParts = () => {
           <div className=" mx-auto my-4 w-11/12 -skew-x-12 overflow-hidden rounded-md border-2 border-violet-200 shadow-md shadow-violet-300 transition-transform duration-300 hover:scale-105 sm:w-3/4 ">
             <button
               onClick={() => openModal(index)}
-              className=" relative  flex w-full skew-x-12 scale-105 bg-indigo-950 bg-opacity-80 py-3 pl-5 sm:py-6 sm:pl-9"
+              className=" relative  flex w-full skew-x-12 scale-105 items-center bg-indigo-950 bg-opacity-80 py-3 pl-5 sm:pl-9 md:py-4 xl:py-6"
             >
-              <div className="pl-0 sm:pl-8">
+              <div className="pl-0 md:pl-4 xl:pl-8">
                 <div className=" relative ">
-                  <p className=" absolute flex h-full w-full items-center justify-center text-center text-base font-bold text-violet-100 sm:text-xl">
+                  <p className=" absolute flex h-full w-full items-center justify-center text-center text-base font-bold text-violet-100 md:text-lg xl:text-xl">
                     {index + 1}
                   </p>
                   <Image
                     src={puppetImg}
                     alt="puppet"
-                    className=" h-8 w-fit object-contain sm:h-12 "
+                    className=" h-8 w-fit object-contain md:h-10 xl:h-12 "
                   />
                 </div>
               </div>
-              <p className=" pl-2 text-start text-xl leading-relaxed text-violet-100 sm:text-3xl">
+              <p className=" pl-2 text-start text-xl leading-relaxed text-violet-100 md:text-2xl xl:text-3xl">
                 {data.enquete}
               </p>
             </button>
@@ -103,7 +103,7 @@ const EnqueteParts = () => {
         <div>
           <animated.div
             style={backgroundAnimation}
-            className="fixed left-0 top-0 flex h-full w-full items-center justify-center "
+            className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center"
             onClick={closeModal}
           >
             <animated.img
