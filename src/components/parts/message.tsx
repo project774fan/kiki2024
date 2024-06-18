@@ -79,10 +79,10 @@ const MsgParts = () => {
   }
 
   return (
-    <div className="flex h-full w-full pt-12 sm:pt-16">
-      <div className="hidden h-full w-24  bg-slate-600 sm:block" />
-      <div className="flex h-full  w-full flex-col-reverse sm:flex-row  ">
-        <div className=" h-[70%] w-full overflow-y-auto bg-indigo-50 shadow-inner sm:h-full sm:w-1/2">
+    <div className="flex h-full w-full pt-12 md:pt-14 xl:pt-16">
+      <div className="hidden h-full bg-slate-600 md:block  md:w-16 xl:w-24" />
+      <div className="flex h-full  w-full flex-col-reverse lg:flex-row  ">
+        <div className=" h-[70%] w-full overflow-y-auto bg-indigo-50 shadow-inner lg:h-full lg:w-1/2">
           <div className="h-full w-full border">
             {imglist.map((list, index) => (
               <>
@@ -91,8 +91,12 @@ const MsgParts = () => {
                   key={index}
                   className="flex w-full border p-2  pl-3 hover:bg-violet-100 sm:p-4 "
                 >
-                  <img src={list.icon} alt="アイコン" className=" h-10 w-10 sm:h-12 sm:w-12 " />
-                  <p className=" my-auto flex h-full items-center justify-center pl-2 text-lg sm:text-2xl">
+                  <img
+                    src={list.icon}
+                    alt="アイコン"
+                    className=" h-10 w-10 md:h-11 md:w-11 xl:h-12 xl:w-12 "
+                  />
+                  <p className=" my-auto flex h-full items-center justify-center pl-2 text-lg md:text-xl xl:text-2xl">
                     {list.name}
                   </p>
                 </button>
@@ -101,7 +105,7 @@ const MsgParts = () => {
           </div>
         </div>
 
-        <div className=" h-[30%]  w-full  sm:relative  sm:h-full sm:w-1/2">
+        <div className=" h-[30%]  w-full  lg:relative  lg:h-full lg:w-1/2">
           <div className="h-full">
             <div className="h-full w-full">
               {selectedImage && (
