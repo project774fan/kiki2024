@@ -108,7 +108,7 @@ const Gacha = () => {
       <TriangleBG style="fixed" />
       <div className="transfor fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 bg-white shadow-lg sm:bottom-8  sm:w-auto">
         <Image src={paper} alt="台紙" className="absolute h-full w-full object-cover" />
-        <Image src={puppet} alt="パペ" className="absolute object-contain p-16 sm:p-40" />
+        <Image src={puppet} alt="パペ" className="absolute object-contain p-16 md:p-28 xl:p-40" />
         <div
           role="button"
           tabIndex={0}
