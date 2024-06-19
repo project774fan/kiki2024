@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
-import loadingImg from "@/img/puppet.png";
+import loadingImg from "@/img/loading_papet.png";
 import enqlist from "../array/enqlist";
 import Loading from "../ui-elements/loading";
 import puppetImg from "@/img/puppet.png";
