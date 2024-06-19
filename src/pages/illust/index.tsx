@@ -1,7 +1,5 @@
 import TriangleBG from "@/components/ui-elements/triangleBG";
 import IllustParts from "../../components/parts/illust";
-
-import Link from "next/link";
 import TopBtn from "@/components/ui-elements/topBtn";
 import Head from "next/head";
 
