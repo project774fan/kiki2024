@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import startImg from "@/img/start/start.png";
+import startBeside from "@/img/start/start_beside.webp";
+import startBesideWide from "@/img/start/start_beside_wide.webp";
+import startVertical from "@/img/start/start_vertical.webp";
+import startVerticalSlim from "@/img/start/start_vertical_slim.webp";
 
 export default function Home() {
   const router = useRouter();
@@ -40,7 +43,26 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           onClick={handleClick}
         >
-          <Image src={startImg} alt="start" className=" h-full w-full object-cover object-bottom" />
+          <Image
+            src={startBeside}
+            alt="start"
+            className=" hidden h-full w-full object-cover object-top lg:block xl:hidden"
+          />
+          <Image
+            src={startBesideWide}
+            alt="start"
+            className=" hidden h-full w-full object-cover object-top xl:block"
+          />
+          <Image
+            src={startVertical}
+            alt="start"
+            className=" hidden h-full w-full object-cover sm:block lg:hidden"
+          />
+          <Image
+            src={startVerticalSlim}
+            alt="start"
+            className="  h-full w-full object-cover sm:hidden"
+          />
         </motion.div>
       </div>
     </>
