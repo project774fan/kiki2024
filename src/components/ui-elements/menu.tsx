@@ -12,6 +12,7 @@ import enqueteBtn from "@/img/menu/アンケート.webp";
 import youtubeBtn from "@/img/menu/名言集.webp";
 import creditBtn from "@/img/menu/参加者.webp";
 import CreditModal from "../modal/creditModal";
+import Time from "./time";
 
 const Menu = () => {
   const linkStyle =
@@ -64,7 +65,10 @@ const Menu = () => {
 
       <div className="flex  sm:block">
         <Banner />
-        <div className="absolute bottom-0 mx-5 hidden h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl sm:block"></div>
+
+        <div className="absolute bottom-0 mx-5 hidden h-1/4 w-full -skew-x-12 items-center rounded-md bg-purple-100 bg-opacity-70 shadow-xl sm:block">
+          <Time />
+        </div>
         <div className="relative ml-auto h-auto w-1/3 justify-center sm:ml-0 sm:flex sm:h-1/3 sm:w-4/5">
           <Link href="/gacha" className={linkStyle}>
             <Image src={illustBtn} alt="イラスト" />
