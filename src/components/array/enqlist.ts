@@ -17,16 +17,16 @@ function enqlist() {
       img: "img/enquete/res_have_no.webp",
     },
     {
+      enquete: "キキ様に似合うのは？",
+      img: "img/enquete/res_pony_twin.webp",
+    },
+    {
       enquete: "好きな衣装は？",
       img: "img/enquete/res_costume.webp",
     },
     {
       enquete: "住むなら？",
       img: "img/enquete/res_neighbourhood.webp",
-    },
-    {
-      enquete: "キキ様に似合うのは？",
-      img: "img/enquete/res_pony_twin.webp",
     },
   ];
   return enqImage;
