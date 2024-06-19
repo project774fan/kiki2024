@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import question from "@/img/modalbar/question.webp";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import question from "@/img/modalBar/question.webp";
 
 interface Handle {
   title: string;

@@ -3,8 +3,8 @@ import Modal from "react-modal";
 import customStyles from "../ui-elements/customStyles";
 import EnqueteParts from "../parts/enquete";
 import TriangleBG from "../ui-elements/triangleBG";
-import enquete_log from "@/img/modalBar/enquete_logo.webp";
 import ModalBar from "../ui-elements/modalBar";
+import enquete_log from "@/img/modalbar/enquete_logo.webp";
 
 interface ModalCheck {
   isModalOpne: any;

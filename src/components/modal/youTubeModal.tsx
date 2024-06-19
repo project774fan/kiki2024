@@ -3,8 +3,8 @@ import Modal from "react-modal";
 import customStyles from "../ui-elements/customStyles";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import TriangleBG from "../ui-elements/triangleBG";
+import player from "@/img/modalbar/player.webp";
 import ModalBar from "../ui-elements/modalBar";
-import player from "@/img/modalBar/player.webp";
 
 interface ModalCheck {
   isModalOpne: any;
