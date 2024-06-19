@@ -1,17 +1,17 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import MsgModal from "./msgModal";
+import MsgModal from "../modal/msgModal";
 import React, { useState } from "react";
-import EnqModal from "./enqModal";
+import EnqModal from "../modal/enqModal";
 import Banner from "./swiper";
-import YouTubeModal from "./youTubeModal";
+import YouTubeModal from "../modal/youTubeModal";
 import messageBtn from "@/img/menu/メッセージ.webp";
 import illustBtn from "@/img/menu/イラスト.webp";
 import enqueteBtn from "@/img/menu/アンケート.webp";
 import youtubeBtn from "@/img/menu/名言集.webp";
 import creditBtn from "@/img/menu/参加者.webp";
-import CreditModal from "./creditModal";
+import CreditModal from "../modal/creditModal";
 
 const Menu = () => {
   const linkStyle =

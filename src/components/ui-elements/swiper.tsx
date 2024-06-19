@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import swiperImg from "@/img/gacha/gacya_banner.png";
+import swiperImg from "@/img/gacha/gacya_banner.webp";
 const Banner = () => {
   return (
     <div className="mt-auto w-3/5 md:w-1/4 xl:w-1/5">

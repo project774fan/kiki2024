@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useSpring, animated } from "@react-spring/web";
 import illustlist from "../array/illustlist";
 import loadingImg from "@/img/loading_papet.png";
+import iconBG from "@/img/icon_bg.webp";
 import Loading from "../ui-elements/loading";
 
 interface Url {
@@ -75,9 +76,9 @@ const IllustParts = () => {
         <>
           <div className=" -skew-x-12 overflow-hidden rounded-md border-2 border-white shadow transition-transform duration-300 hover:scale-105">
             <div className=" bg-white">
-              <img
+              <Image
                 key={index}
-                src="img/ui-elements/icon_bg.png"
+                src={iconBG}
                 alt="背景"
                 className=" absolute h-full w-full opacity-50 "
               />

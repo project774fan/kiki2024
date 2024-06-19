@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import customStyles from "./customStyles";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import customStyles from "../ui-elements/customStyles";
 import EnqueteParts from "../parts/enquete";
-import TriangleBG from "./triangleBG";
-import enquete_log from "@/img/enquete_logo.png";
-import ModalBar from "./modalBar";
+import TriangleBG from "../ui-elements/triangleBG";
+import enquete_log from "@/img/modalBar/enquete_logo.webp";
+import ModalBar from "../ui-elements/modalBar";
 
 interface ModalCheck {
   isModalOpne: any;

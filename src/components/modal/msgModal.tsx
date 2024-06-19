@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import MsgParts from "../parts/message";
-import customStyles from "./customStyles";
-import ModalBar from "./modalBar";
-import pape_log from "@/img/pape_logo.png";
+import customStyles from "../ui-elements/customStyles";
+import ModalBar from "../ui-elements/modalBar";
+import pape_log from "@/img/modalBar/pape_logo.webp";
 
 interface ModalCheck {
   isModalOpne: any;
