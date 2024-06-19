@@ -103,7 +103,7 @@ const Gacha = () => {
   return (
     <>
       <Head>
-        <title>募集</title>
+        <title>募集｜シスイアーカイブ</title>
       </Head>
       <TriangleBG style="fixed" />
       <div className="transfor fixed left-1/2 top-6 aspect-[210/297] w-4/5 -translate-x-1/2 bg-white shadow-lg sm:bottom-8  sm:w-auto">

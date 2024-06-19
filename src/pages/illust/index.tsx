@@ -7,7 +7,7 @@ const Illust = () => {
   return (
     <>
       <Head>
-        <title>イラスト</title>
+        <title>イラスト｜シスイアーカイブ</title>
       </Head>
       <div>
         <div className=" flex h-full items-start justify-center">
