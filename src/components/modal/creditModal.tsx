@@ -83,14 +83,12 @@ const CreditModal = ({ isModalOpne, closeModal }: ModalCheck) => {
                 <tbody>
                   {orgList.map((list, index) => (
                     <tr key={index}>
-                      <td>{list.job}</td>
-                      <td>：</td>
-                      <td className="px-1 ">{list.name}</td>
-                      <td>
-                        <a href={list.url} target="_blank" className="hover:text-violet-400">
-                          {list.id}
-                        </a>
-                      </td>
+                      <a href={list.url} target="_blank" className="hover:text-violet-400">
+                        <td>{list.job}</td>
+                        <td>：</td>
+                        <td className="px-1 ">{list.name}</td>
+                        <td>{list.id}</td>
+                      </a>
                     </tr>
                   ))}
                 </tbody>
