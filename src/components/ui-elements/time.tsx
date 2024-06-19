@@ -14,7 +14,7 @@ const Time = () => {
     fetchTime();
 
     // Update time every minute
-    const interval = setInterval(fetchTime, 10000);
+    const interval = setInterval(fetchTime, 1000);
 
     return () => clearInterval(interval);
   }, []);
