@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import startBeside from "@/img/start/start_beside.webp";
-import startBesideWide from "@/img/start/start_beside_wide.webp";
-import startVertical from "@/img/start/start_vertical.webp";
-import startVerticalSlim from "@/img/start/start_vertical_slim.webp";
+import startBeside from "@/img/start/start_beside.png";
+import startBesideWide from "@/img/start/start_beside_wide.png";
+import startVertical from "@/img/start/start_vertical.png";
+import startVerticalSlim from "@/img/start/start_vertical_slim.png";
 
 export default function Home() {
   const router = useRouter();
