@@ -17,18 +17,15 @@ const YouTubeModal = ({ isModalOpne, closeModal }: ModalCheck) => {
   };
 
   const link = [
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
-    "B_oZSfF6aOI",
+    "BZauuqbXr3k",
+    "Zq_NScwU8w4",
+    "HO2SoxVuv8Q",
+    "AhyflJHzoeI",
+    "bdmcPK8JhlM",
+    "fkuCypSbaeQ",
+    "uYlKI_9PUa4",
+    "E2mW3UhwwhQ",
+    "vxzSm_zIJvg",
   ];
 
   //モーダルレスポンシブ
