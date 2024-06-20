@@ -1,4 +1,4 @@
-import bg from "@/img/background.jpg";
+import bg from "@/img/background.png";
 import Image from "next/image";
 const Background = () => {
   return (
