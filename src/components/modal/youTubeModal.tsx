@@ -25,7 +25,6 @@ const YouTubeModal = ({ isModalOpne, closeModal }: ModalCheck) => {
     "fkuCypSbaeQ",
     "uYlKI_9PUa4",
     "E2mW3UhwwhQ",
-    "vxzSm_zIJvg",
   ];
 
   //モーダルレスポンシブ
