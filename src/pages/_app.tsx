@@ -10,10 +10,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href={favicon.src} />
         <title>シスイアーカイブ</title>
         <meta httpEquiv="Content-Language" content="ja" />
-        <meta
-          name="google-site-verification"
-          content="SlGqNPN_A71o3UL54Oe0CfB97-zlXQCmyyMP4OlgZp8"
-        />
       </Head>
       <Component {...pageProps} />
     </>

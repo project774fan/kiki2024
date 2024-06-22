@@ -6,12 +6,14 @@ import Background from "@/components/ui-elements/background";
 
 const Top = () => {
   return (
-    <div className="h-screen w-screen">
-      <Background />
-      <LeftUi />
-      <RightUi />
-      <Menu />
-    </div>
+    <>
+      <div className="h-screen w-screen">
+        <Background />
+        <LeftUi />
+        <RightUi />
+        <Menu />
+      </div>
+    </>
   );
 };
 
